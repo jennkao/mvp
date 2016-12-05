@@ -21,24 +21,31 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  To movie-lovers everywhere, here is your go-to app for discovering what movie to watch next!
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Our app makes finding a movie to watch easy! Discover new movies by searching for movie recommendations via the TasteKid API or by scrolling through the top favorited movies. Users can save favorited movies so that when Friday night rolls around, there's no need to go looking for a movie--they can just check their favorited movies!
 
 ## Problem ##
   > Describe the problem your product solves.
+  With the explosion of on-demand streaming, it can be hard to pick a movie to watch. You have the popcorn and blankets ready, but by the time you finally pick a movie, it's midnight--too late to even watch the movie you picked! 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  Enter our app, which makes discovering movies easy. The app offers a way for users to discover movies to watch, favorite movies for later consideration, and find streaming platforms that offer each movie.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  'We've engineered the product with the movie-lover in mind to offer a hassle-free movie experience.'
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  Just type in a movie that you enjoyed into the searchbar, add the suggested movies to your favorite list, and find out which streaming platform offers your movie.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  'The app is great--it's my one-stop solution for finding a movie to watch on Saturday night! No more digging through reddit and imgur for movie recommendations, I just look up my favorited movies!'
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
