@@ -1,0 +1,11 @@
+ul {
+  list-style-type: none
+}
+
+.favorites {
+  padding: 30px 0;
+}
+
+.favorites:first-child {
+  padding: 5px 0;
+}
