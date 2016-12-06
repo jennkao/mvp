@@ -1,3 +1,12 @@
 <h2>Popular</h2>
 
-{{spicy}}
+<div>
+  <h3>Favorite List</h3>
+    <ul>
+      <li ng-repeat='movie in data.favorites track by movie._id'>
+        {{movie.title}}
+      </li>
+    </ul>
+</div>
+<!-- 
+NEED TO EITHER CHANGE THE TRACKING OR INPUT DATA IN A DIFFERENT FASHION -->

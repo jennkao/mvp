@@ -10,6 +10,27 @@ var movieData = [
   },
   {
     title: 'star wars'
+  },
+  {
+    title: 'hunt for the wilderpeople'
+  }, 
+  {
+    title: 'Doctor Strange'
+  },
+  {
+    title: 'life, animated'
+  }, 
+  {
+    title: "don't think twice"
+  },
+  {
+    title: 'the lobster'
+  },
+  {
+    title: 'fantastic mr.fox'
+  },
+  {
+    title: 'spotlight'
   }
 ];
 

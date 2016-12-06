@@ -11,8 +11,8 @@ angular.module('App.recommend', [])
     });
   };
 
-  $scope.featureMovie = function(movieTitle) {
-    $scope.data.featuredMovie = movieTitle;
+  $scope.featureMovie = function(movie) {
+    $scope.data.featuredMovie = movie;
     var movieTitleAPI = movie.title.split(' ').join('+');
     var baseUrl = 'http://www.omdbapi.com/?';
     baseUrl += 't=' + movieTitleAPI + '&plot=short&r=json';

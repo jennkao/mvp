@@ -22,11 +22,13 @@ var movieActions = {
   },
   'POST': function(req, res) {
     var movieData = req.body;
-    Movie.findOne({title: movieData.title}, function(movie) {
+    Movie.findOne({title: movieData.title}, function(err, movie) {
+      if (err) {
+        console.log(err);
+      }
       if (movie === null) {
-        console.log(movie);
         var newMovie = new Movie({title: movieData.title, 
-          information: JSON.stringify(movieData), favoriteCount: 1});
+          information: JSON.stringify(movieData.info), favoriteCount: 1});
         newMovie.save(function(err) {
           if (err) {
             console.log(err);
@@ -35,25 +37,24 @@ var movieActions = {
           }
         });
       } else {
-        console.log(movie);
+        var prevFavCount = movie.favoriteCount;
+        Movie.findByIdAndUpdate(movie._id, {favoriteCount: prevFavCount + 1}, function(err, movie) {
+          utils.sendResponse(res, 201, 'movie successfully updated in the Db', 'text/html');
+        });
       }
+    });
+  }
+};
+
+var favoriteActions = {
+  'GET': function(req, res) {
+    Movie.find(function(err, movies) {
+      utils.sendResponse(res, 201, JSON.stringify(movies), 'application/json');
     });
   }
 };
 
 
 
-// var movieModule = require('./db/movie.js');
-// var Movie = movieModule.movieModel;
-
-// var movie = new Movie({title: 'Requiem for a Dream'});
-// movie.save(function(err) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log('saved a movie!');
-//   }
-// });
-
-
 module.exports.movieActions = movieActions;
+module.exports.favoriteActions = favoriteActions;

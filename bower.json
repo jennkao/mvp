@@ -1,0 +1,22 @@
+{
+  "name": "hrsf50-mvp",
+  "description": "This project is a movie-recommendation application that offers a way for users to discover movies to watch, favorite movies for later consideration, and find streaming platforms that provide each movie.",
+  "main": "app.js",
+  "authors": [
+    "Jenn Kao"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jennkao/hrsf50-mvp",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-ui-router": "^0.3.2"
+  }
+}

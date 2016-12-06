@@ -29,13 +29,25 @@ angular.module('App.services', [])
       data: JSON.stringify(movie)
     })
     .then(function(res) {
-      console.log('res from server to POST', res);
+      console.log('res from server to ', res);
+    });
+  };
+
+  var getFavorites = function(movie) {
+    return $http({
+      method: 'GET',
+      url: '/favorites',
+    })
+    .then(function(res) {
+      console.log('res from server with favorites', res.data);
+      return res.data;
     });
   };
 
   return {
     getAll: getAll,
     getInfo: getInfo,
-    favoriteMovie: favoriteMovie
+    favoriteMovie: favoriteMovie,
+    getFavorites: getFavorites
   };
 });

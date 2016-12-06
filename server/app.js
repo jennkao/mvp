@@ -21,10 +21,12 @@ app.listen(port, ip, function() {
 });
 
 var router = {
-  '/movies': reqhandlers.movieActions
+  '/movies': reqhandlers.movieActions,
+  '/favorites': reqhandlers.favoriteActions
 };
 
 app.get('/movies', router['/movies']['GET']);
 app.post('/movies', router['/movies']['POST']);
 
+app.get('/favorites', router['/favorites']['GET']);
 
