@@ -1,12 +1,16 @@
-<h2>Popular</h2>
-
-<div>
-  <h3>Favorite List</h3>
+  <div>
+  <h3>Top Favorites</h3>
     <ul>
-      <li ng-repeat='movie in data.favorites track by movie._id'>
-        {{movie.title}}
+      <li ng-repeat='movie in data.favorites | limitTo: 3| orderBy:"-favoriteCount" '>
+        <img ng-src={{movie.poster}}><br>
+        Favorited {{movie.favoriteCount}} times!<br>
+        {{movie.title}}<br>
+        {{movie.year}}<br>
+        {{movie.director}}<br>
+        {{movie.actors}}<br>
+        {{movie.awards}}<br>
+        {{movie.plot}}<br>
+        http://www.imdb.com/title/{{data.featuredMovie.info.imdbID}}
       </li>
     </ul>
 </div>
-<!-- 
-NEED TO EITHER CHANGE THE TRACKING OR INPUT DATA IN A DIFFERENT FASHION -->

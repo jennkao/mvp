@@ -7,6 +7,7 @@ angular.module('App.popular', [])
     Movies.getFavorites()
     .then(function(movies) {
       $scope.data.favorites = movies;
+      console.log('favs', $scope.data.favorites);
     });
   };
 

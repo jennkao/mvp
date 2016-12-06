@@ -1,10 +1,13 @@
 angular.module('App.services', [])
 
 .factory('Movies', function($http) {
-  var getAll = function() {
+
+  var getAll = function(query) {
+    console.log('query in services', JSON.stringify({query: query}));
     return $http({
-      method: 'GET',
-      url: '/movies'
+      method: 'POST',
+      url: '/movies',
+      data: JSON.stringify({query: query})
     })
     .then(function(res) {
       console.log('res from server to GET', res);
@@ -25,7 +28,7 @@ angular.module('App.services', [])
   var favoriteMovie = function(movie) {
     return $http({
       method: 'POST',
-      url: '/movies',
+      url: '/favorites',
       data: JSON.stringify(movie)
     })
     .then(function(res) {
@@ -39,8 +42,7 @@ angular.module('App.services', [])
       url: '/favorites',
     })
     .then(function(res) {
-      console.log('res from server with favorites', res.data);
-      return res.data;
+      return JSON.parse(res.data);
     });
   };
 

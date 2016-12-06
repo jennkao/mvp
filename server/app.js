@@ -25,8 +25,8 @@ var router = {
   '/favorites': reqhandlers.favoriteActions
 };
 
-app.get('/movies', router['/movies']['GET']);
 app.post('/movies', router['/movies']['POST']);
 
 app.get('/favorites', router['/favorites']['GET']);
+app.post('/favorites', router['/favorites']['POST']);
 
