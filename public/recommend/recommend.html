@@ -1,0 +1,44 @@
+<h2>Get a Recommendation</h2>
+
+<form ng-submit="getMovies()">
+    {{spicy}}
+  <label>I want to watch a movie like 
+    <input type='text' />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+
+<div>
+  <h3>Movie List</h3>
+    <ul>
+      <li ng-repeat='movie in data.movies'
+      ng-click='featureMovie(movie)'
+      >
+      {{movie.title}}
+      </li>
+    </ul>
+</div>
+
+<div>
+  <h3>Movie View</h3>
+  <form ng-submit='favorite(data.featuredMovie)'>
+    <label>
+      Favorite this movie!
+      <input type="Submit" value="Favorite" />
+    </label>
+  </form>
+  <div>
+    <img ng-src={{data.featuredMovie.info.Poster}} >
+    {{data.featuredMovie.info.Title}}<br>
+    {{data.featuredMovie.info.Year}}<br>
+    {{data.featuredMovie.info.Director}}<br>
+    {{data.featuredMovie.info.Actors}}<br>
+    {{data.featuredMovie.info.Awards}}<br>
+    {{data.featuredMovie.info.Plot}}<br>
+    http://www.imdb.com/title/{{data.featuredMovie.info.imdbID}}
+  </div>
+</div>
+
+<div>
+  <h3>Find this movie on..</h3>
+</div>
