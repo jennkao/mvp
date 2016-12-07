@@ -1,16 +1,16 @@
 <div class='container-fluid'>
-  <h3>Top Favorites</h3>
-    <ul>
-      <li class='favorites' ng-repeat='movie in data.favorites | limitTo: 5| orderBy:"-favoriteCount" '>
-        <button class="btn btn-default glyphicon glyphicon-heart"> {{movie.favoriteCount}}</button><br>
-        <img ng-src={{movie.poster}}><br>
-        <p>{{movie.title}}</p><br>
-        <p>{{movie.year}}</p><br>
-        <p>{{movie.director}}</p><br>
-        <p>{{movie.actors}}</p><br>
-        <p>{{movie.awards}}</p><br>
-        <p>{{movie.plot}}</p><br>
-        <p>http://www.imdb.com/title/{{data.featuredMovie.info.imdbID}}
-      </li>
-    </ul>
+  <h3 class='header'>Top Favorites</h3>
+    <div class="row">
+      <ul>
+        <li class='favorites' ng-repeat='movie in data.favorites | orderBy:"-favoriteCount | limitTo:4" '>
+          <button class="btn btn-default glyphicon glyphicon-heart"> {{movie.favoriteCount}}</button><br>
+          <img ng-src={{movie.poster}}><br>
+          <p class='favTitle'>{{movie.title}} ({{movie.year}})</p>
+          <p>{{movie.plot}}</p>
+          <p><span class='subhead'>Director: </span>{{movie.director}}</p>
+          <p><span class='subhead'>Cast: </span>{{movie.actors}}</p>
+          <p><a ng-href='http://www.imdb.com/title/{{movie.imdbID}}'>Check this movie out on IMDb</a></p>
+        </li>
+      </ul>
+    </div>
 </div>

@@ -1,11 +1,11 @@
-<h2 class='container-fluid'>Get a Recommendation</h2>
+<h2 class='container-fluid header'>Get a Movie Recommendation</h2>
 
 <div class='container-fluid'>
   <div class="row">
     <div class='col-md-6'>
       <form ng-submit="searchRecMovies()">
 
-        <div class="input-group">
+        <div class="input-group recBar">
           <input type='text' ng-model="data.query" ng-minlength='2' class="form-control" 
           placeholder="I want to watch a movie like..."/>
           <span class="input-group-btn">
@@ -15,8 +15,9 @@
 
       </form>
 
-      <ul>
-        <li ng-repeat='movie in data.movies'
+      <ul class='movieList'>
+        <li class='movie'
+        ng-repeat='movie in data.movies | limitTo: 10'
         ng-click='featureMovie(movie)'
         >
         {{movie.title}}
@@ -30,13 +31,12 @@
         <button type="submit" class="btn btn-default glyphicon glyphicon-heart"></button>
       </form>
       <div>
-        <img ng-src={{data.featuredMovie.info.Poster}} ><br>
-        {{data.featuredMovie.info.Title}}<br>
-        {{data.featuredMovie.info.Year}}<br>
-        {{data.featuredMovie.info.Director}}<br>
-        {{data.featuredMovie.info.Actors}}<br>
-        {{data.featuredMovie.info.Plot}}<br>
-        <p ng-show='data.featuredMovie'> http://www.imdb.com/title/{{data.featuredMovie.info.imdbID}} </p>
+        <img ng-src={{data.featuredMovie.info.Poster}}><br>
+        <p ng-show='data.featuredMovie' class='movieTitle'>{{data.featuredMovie.info.Title}} ({{data.featuredMovie.info.Year}})</p>
+        <p>{{data.featuredMovie.info.Plot}}</p>
+        <p ng-show='data.featuredMovie'><span class='subhead'>Director: </span>{{data.featuredMovie.info.Director}}</p>
+        <p ng-show='data.featuredMovie'><span class='subhead'>Cast: </span>{{data.featuredMovie.info.Actors}}</p>
+        <p ng-show='data.featuredMovie' ng-href='http://www.imdb.com/title/{{data.featuredMovie.info.imdbID}}'>Check this movie out on IMDb</p>
       </div>
     </div>
   </div>

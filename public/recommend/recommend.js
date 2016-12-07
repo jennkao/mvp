@@ -1,8 +1,6 @@
 angular.module('App.recommend', [])
 .controller('recommendCntrl', function recommendCntrl($scope, Movies) {
   $scope.data = {};
-  // $scope.data.query = 'harry potter and the goblet of fire';
-  $scope.spicy = 'chili';
 
   $scope.searchRecMovies = function() {
     Movies.getAll($scope.data.query)
