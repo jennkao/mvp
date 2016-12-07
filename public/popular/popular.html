@@ -2,7 +2,7 @@
   <h3 class='header'>Top Favorites</h3>
     <div class="row">
       <ul>
-        <li class='favorites' ng-repeat='movie in data.favorites | orderBy:"-favoriteCount | limitTo:4" '>
+        <li class='favorites' ng-repeat='movie in data.favorites | orderBy:"-favoriteCount" | limitTo:4 '>
           <button class="btn btn-default glyphicon glyphicon-heart"> {{movie.favoriteCount}}</button><br>
           <img ng-src={{movie.poster}}><br>
           <p class='favTitle'>{{movie.title}} ({{movie.year}})</p>

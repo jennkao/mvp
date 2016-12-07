@@ -6,7 +6,6 @@ angular.module('App.recommend', [])
     Movies.getAll($scope.data.query)
     .then(function(movies) {
       $scope.data.movies = movies;
-      console.log('$scope.data is now', $scope.data);
     });
   };
 
@@ -15,7 +14,6 @@ angular.module('App.recommend', [])
     var movieTitleAPI = movie.title.split(' ').join('+');
     var baseUrl = 'http://www.omdbapi.com/?';
     baseUrl += 't=' + movieTitleAPI + '&plot=short&r=json';
-
     Movies.getInfo(baseUrl).then(function(movieInfo) {
       $scope.data.featuredMovie.info = movieInfo;
     });

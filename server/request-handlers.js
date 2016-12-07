@@ -1,14 +1,11 @@
 var request = require('request');
-var data = require('./data/movieData.js');
 var utils = require('./utils.js');
 var mongoose = require('mongoose');
 var querystring = require('querystring');
-
 var movieModule = require('./db/movie.js');
 var database = require('./db/db.js');
 var env = require('./config/env.js');
 
-var movieData = data.movieData;
 var Movie = movieModule.movieModel;
 var db = database.db;
 
@@ -43,9 +40,6 @@ var favoriteActions = {
         console.log(err);
       }
       if (movie === null) {
-        console.log(movieData.info.Director);
-        console.log(movieData.info.Actors);
-        console.log(movieData.info.Plot);
         var newMovie = new Movie({
           title: movieData.title, 
           poster: movieData.info.Poster,
